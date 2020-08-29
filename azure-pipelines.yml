@@ -10,12 +10,28 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: npmAuthenticate@0
+  inputs:
+    workingFile: .npmrc
+    customEndpoint: 'NPM Service connection (giancarlosio)'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '12.18.2'
   displayName: 'Install Node.js'
 
+#- bash: | # Grab the package version
+#    v=`node -p "const p = require('./package.json'); p.version;"`
+#    echo "##vso[task.setvariable variable=packageVersion]$v"
+
 - script: |
     npm install
     npm run build
+    npm run version patch --force
+    npm publish
   displayName: 'npm install and build'
+
+- script: |
+    npm run version patch --force
+    npm publish
+  displayName: 'npm up version and publish to npm'

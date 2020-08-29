@@ -27,11 +27,9 @@ steps:
 - script: |
     npm install
     npm run build
-    npm run version patch --force
-    npm publish
   displayName: 'npm install and build'
 
 - script: |
-    npm run version patch --force
+    npm version patch --force
     npm publish
   displayName: 'npm up version and publish to npm'

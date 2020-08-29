@@ -1,6 +1,6 @@
 {
   "name": "nexus-changelog-generator",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A package to generate changelog for web apps",
   "main": "./bin/index.js",
   "scripts": {

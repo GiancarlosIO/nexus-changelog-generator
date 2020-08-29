@@ -23,8 +23,9 @@ steps:
 - script: |
     git config user.email giancarlos.isasi@gmail.com
     git config user.name "Giancarlos Isasi Oyolo"
+  displayName: 'Configure git'
 
-#- bash: | # Grab the package version
+  #- bash: | # Grab the package version
 #    v=`node -p "const p = require('./package.json'); p.version;"`
 #    echo "##vso[task.setvariable variable=packageVersion]$v"
 

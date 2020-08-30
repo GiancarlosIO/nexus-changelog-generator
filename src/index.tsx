@@ -6,50 +6,58 @@ import ora from 'ora';
 
 import {
   getCommits,
-  parseCommit,
-  // getGitTags,
-  // getPackageVersion,
+  getGitTags,
+  generateChangelog,
+  getAndSetNewGitTag,
 } from './utils';
-import { CommitTypesObj } from './types';
+// import { CommitTypesObj } from './types';
 
 // const writeFile = util.promisify(fs.writeFile);
 // const currentPath = process.cwd();
 
-const spinner = ora('Parsing commit...');
-
 async function run() {
-  spinner.start();
-  const commits = await getCommits({
-    to: 'HEAD',
-  });
-  // ====== Parse commits ====== //
-  const commitArr = commits
-    .map(parseCommit)
-    .filter((commit) => !commit.isFromMerge)
-    .filter(
-      // we only want the commits with the `conventional commits` structure
-      (commit) =>
-        commit.conventionalCommitType &&
-        Object.keys(CommitTypesObj).includes(commit.conventionalCommitType)
-    );
-  // console.log({ commitArr: commitArr.slice(commitArr.length -10, commitArr.length) });
-  console.log({ commitArr });
-  spinner.succeed(
-    'Success to parse commits, found ${commitArr.length} commits.'
-  );
+  const spinner = ora();
 
+  // ====== Git TAGS and get commits====== //
+  spinner.start('Parsing commit...');
 
-  // ====== Git TAGS ====== //
   spinner.start('Analyzing git tags...');
-  // const packageVersion = await getPackageVersion();
-  // const gitTags = await getGitTags();
-  // if (gitTags.length === 0) {
-  //   spinner.info(`Git tags empty. Creating a new "v${packageVersion}" tag.`);
-  //   const newTag = `v${packageVersion}`;
-  //   execa('git', ['tag', '-a', newTag, '-m', `Tag ${newTag}`]);
-  //   spinner.succeed(`Tag ${newTag} created successfully.`);
-  // }
+  const gitTags = await getGitTags();
 
+  if (gitTags.length === 0) {
+    spinner.info(`Git: Tags are empty. Creating a new git tag.`);
+    const commits = await getCommits({
+      to: 'HEAD',
+    });
+    const newTag = await getAndSetNewGitTag(commits);
+    spinner.succeed(`Tag "${newTag}" created successfully.`);
+
+    // ====== Get, Parse commits and generate the CHANGELOG content ====== //
+
+    const changelog = generateChangelog(commits);
+    console.log(changelog);
+  } else {
+    // ====== Get, Parse commits and generate the CHANGELOG content ====== //
+    const from = gitTags[gitTags.length - 1];
+    spinner.info(`Getting commits from ${from} to 'HEAD'.`);
+    const commits = await getCommits({
+      from: `${from}`,
+      to: 'HEAD',
+    });
+
+    if (commits.length === 0) {
+      spinner.succeed(
+        "No commits to evaluate. Alright, looks like you has no commits since the last git tag. That's ok, don't worry :)"
+      );
+      process.exit(0)
+    }
+
+    const newTag = await getAndSetNewGitTag(commits);
+    spinner.succeed(`Tag "${newTag}" created successfully.`);
+
+    const changelog = generateChangelog(commits);
+    console.log(changelog);
+  }
 
   spinner.succeed('Success to generate the changelog.md file!');
 }

@@ -31,7 +31,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598727008689</updated>
-      <workItem from="1598727009885" duration="6511000" />
+      <workItem from="1598727009885" duration="22897000" />
     </task>
     <servers />
   </component>
@@ -43,13 +43,25 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="715" y="349" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1598727032773" />
+    <state x="678" y="193" key="#TypeScript" timestamp="1598757461406">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="678" y="193" key="#TypeScript/0.0.1920.1050@0.0.1920.1050" timestamp="1598757461406" />
     <state x="709" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598729555967">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="709" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598729555967" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1598729229549">
+    <state x="461" y="170" key="SettingsEditor" timestamp="1598760393409">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1598729229549" />
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1598760393409" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1598741417318">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598741417318" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1598742410816">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598742410816" />
   </component>
 </project>

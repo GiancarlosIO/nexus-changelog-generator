@@ -9,7 +9,13 @@ import gitLogParser from 'git-log-parser';
 
 const readFile = util.promisify(fs.readFile);
 
-import { RawCommit, CommitTypes, CommitScope, Commit } from './types';
+import {
+  RawCommit,
+  CommitTypes,
+  CommitScope,
+  Commit,
+  CommitTypesObj,
+} from './types';
 
 Object.assign(gitLogParser.fields, {
   hash: 'H',
@@ -22,7 +28,7 @@ export async function getCommits({ from = '', to = 'HEAD' }) {
   return (
     await getStream.array<RawCommit>(
       gitLogParser.parse({
-        _: `${from ? from + '...' : ''}${to}`,
+        _: `${from ? from + '..' : ''}${to}`,
         decorate: true,
       })
     )
@@ -112,6 +118,13 @@ export const getGitTags = async () => {
   return [];
 };
 
+export const getAndSetNewGitTag = async (commits: (RawCommit | Commit)[]) => {
+  const newTag = `v0.${commits[0].commit.long.slice(0, 8)}`;
+  await execa('git', ['tag', '-a', newTag, '-m', `Tag ${newTag}`]);
+
+  return newTag
+}
+
 // TODO: PUSH TAGS TO ORIGIN
 // git push origin --tags
 
@@ -124,4 +137,23 @@ export const getPackageVersion = async () => {
   );
 
   return JSON.parse(packageJson).version;
+};
+
+export const generateChangelog = (commits: RawCommit[]) => {
+  const commitArr = commits
+    .map(parseCommit)
+    .filter((commit) => !commit.isFromMerge)
+    .filter(
+      // we only want the commits with the `conventional commits` structure
+      (commit) =>
+        commit.conventionalCommitType &&
+        Object.keys(CommitTypesObj).includes(commit.conventionalCommitType)
+    );
+  // console.log({ commitArr: commitArr.slice(commitArr.length -10, commitArr.length) });
+  console.log({ commitArr });
+
+  return `
+    # Commit
+    ${commitArr.map(commit => `${commit.commit.long}:${commit.subject} `).join('\n')}
+  `;
 };

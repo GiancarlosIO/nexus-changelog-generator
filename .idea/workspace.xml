@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc24b4c-67ef-4f71-8cc5-42734e78db56" name="Default Changelist" comment="" />
+    <list default="true" id="9fc24b4c-67ef-4f71-8cc5-42734e78db56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +65,7 @@
       <workItem from="1598727009885" duration="26063000" />
       <workItem from="1598768977619" duration="41000" />
       <workItem from="1598769026512" duration="3274000" />
+      <workItem from="1599950576047" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Add getAndSetNewGitTag and generateChangelog functions">
       <created>1598771864683</created>
@@ -96,6 +104,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Add getAndSetNewGitTag and generateChangelog functions" />
@@ -115,17 +124,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="709" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598729555967" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1598760393409">
+    <state x="461" y="170" key="SettingsEditor" timestamp="1599955318143">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1598760393409" />
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1599955318143" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1598772298140">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598772298140" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1598742410816">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1599955171253">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598742410816" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1599955171253" />
   </component>
 </project>

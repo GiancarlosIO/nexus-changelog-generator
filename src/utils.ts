@@ -47,7 +47,9 @@ const isFromMerge = (commit: RawCommit) =>
  * First, we need to identify the type of the current commit.
  * */
 
-export const getCommitType: (commit: RawCommit) => CommitTypes = (commit) => {
+export const getConventionalCommitType: (commit: RawCommit) => CommitTypes = (
+  commit
+) => {
   if (isFromMerge(commit)) {
     return undefined;
   }
@@ -76,7 +78,6 @@ export const getCommitScope: GetScope = ({ subject }) => {
 
     // verify if it has the form of "feat(MainMenu)"
     if (typeAndScope.includes('(')) {
-      // console.log({ subject, commitSubject: subject.split(':')[0] });
       const scope = typeAndScope.split('(')[1].replace(')', '');
 
       // verify if it has the form of "feat(MainMenu/Right)"
@@ -89,21 +90,30 @@ export const getCommitScope: GetScope = ({ subject }) => {
 
       return scope;
     }
-    return typeAndScope;
+    return undefined;
   }
 
   return undefined;
 };
 
-export const parseCommit: (commit: RawCommit) => Commit = (
-  commit: RawCommit
-) => {
+export const parseCommit: (
+  commit: RawCommit,
+  repositoryUrl?: string
+) => Commit = (commit: RawCommit, repositoryUrl) => {
+  const commitScope = getCommitScope(commit);
   return {
     ...commit,
     isFromMerge: isFromMerge(commit),
-    conventionalCommitType: getCommitType(commit),
-    appScope: getCommitScope(commit),
+    conventionalCommitType: getConventionalCommitType(commit),
+    commitScope,
+    /**
+     * 'feat(Menu): Implement swiper component' => ['feat(Menu)', 'Implement swiper component'] => 'Implement swiper component'
+     */
+    messageWithoutTypeAndScope: commit.subject.includes(':')
+      ? commit.subject.split(':')[1].trim()
+      : commit.subject,
     authorName: `${commit.author.name} (${commit.author.email})`,
+    url: repositoryUrl ? `${repositoryUrl}/${commit.commit.long}` : undefined,
   };
 };
 
@@ -122,8 +132,8 @@ export const getAndSetNewGitTag = async (commits: (RawCommit | Commit)[]) => {
   const newTag = `v0.${commits[0].commit.long.slice(0, 8)}`;
   await execa('git', ['tag', '-a', newTag, '-m', `Tag ${newTag}`]);
 
-  return newTag
-}
+  return newTag;
+};
 
 // TODO: PUSH TAGS TO ORIGIN
 // git push origin --tags
@@ -139,9 +149,26 @@ export const getPackageVersion = async () => {
   return JSON.parse(packageJson).version;
 };
 
-export const generateChangelog = (commits: RawCommit[]) => {
+export const getRepositoryUrl = (remoteOriginUrl: string) => {
+  if (remoteOriginUrl.includes('bitbucket')) {
+    const orgAndRepositoryName = remoteOriginUrl
+      .replace('\n', '')
+      .replace('.git', '')
+      .split(':')[1];
+
+    return `https://bitbucket.org/${orgAndRepositoryName}`;
+  }
+
+  // github by default
+  return remoteOriginUrl.replace('\n', '').replace('.git', '');
+};
+
+export const generateChangelog = (
+  commits: RawCommit[],
+  repositoryUrl?: string
+) => {
   const commitArr = commits
-    .map(parseCommit)
+    .map((commit) => parseCommit(commit, repositoryUrl))
     .filter((commit) => !commit.isFromMerge)
     .filter(
       // we only want the commits with the `conventional commits` structure
@@ -149,11 +176,47 @@ export const generateChangelog = (commits: RawCommit[]) => {
         commit.conventionalCommitType &&
         Object.keys(CommitTypesObj).includes(commit.conventionalCommitType)
     );
-  // console.log({ commitArr: commitArr.slice(commitArr.length -10, commitArr.length) });
-  console.log({ commitArr });
+
+  /**
+   * We need to get the date of the last commit.
+   */
+  const changelogCreatedAt = commits[
+    commits.length - 1
+  ].committer.date.toLocaleDateString();
+
+  const commitsByAppScope = commitArr.reduce<{ [key: string]: Commit[] }>(
+    (acc, nextCommit) => {
+      const { commitScope } = nextCommit;
+
+      if (commitScope) {
+        if (typeof commitScope === 'object') {
+          // acc[commitScope.] = [...(acc[commitScope] || []), nextCommit];
+        } else {
+          acc[commitScope] = [...(acc[commitScope] || []), nextCommit];
+        }
+      } else {
+        acc.common = [...(acc.common || []), nextCommit];
+      }
+      return acc;
+    },
+    {}
+  );
+
+  const body = Object.keys(commitsByAppScope)
+    .map((commitScopeKey) => {
+      return `
+### ${commitScopeKey}
+${commitsByAppScope[commitScopeKey]
+  .map(
+    (commit) => `* ${commit.subject} [${commit.commit.short}](${commit.url})`
+  )
+  .join('\n')}
+`;
+    })
+    .join('');
 
   return `
-    # Commit
-    ${commitArr.map(commit => `${commit.commit.long}:${commit.subject} `).join('\n')}
+## ${changelogCreatedAt}
+${body}
   `;
 };

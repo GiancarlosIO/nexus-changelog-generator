@@ -46,6 +46,8 @@ export type CommitScope =
 export type Commit = RawCommit & {
   isFromMerge: boolean;
   conventionalCommitType: CommitTypes;
-  appScope: CommitScope;
+  messageWithoutTypeAndScope: string;
+  commitScope: CommitScope;
   authorName: string;
+  url?: string;
 };

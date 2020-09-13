@@ -8,7 +8,7 @@ import {
   getCommits,
   getGitTags,
   generateChangelog,
-  getAndSetNewGitTag,
+  // getAndSetNewGitTag,
 } from './utils';
 // import { CommitTypesObj } from './types';
 
@@ -29,8 +29,9 @@ async function run() {
     const commits = await getCommits({
       to: 'HEAD',
     });
-    const newTag = await getAndSetNewGitTag(commits);
-    spinner.succeed(`Tag "${newTag}" created successfully.`);
+    console.log(JSON.stringify(commits.reverse().slice(commits.length - 10, commits.length), null, 2));
+    // const newTag = await getAndSetNewGitTag(commits);
+    // spinner.succeed(`Tag "${newTag}" created successfully.`);
 
     // ====== Get, Parse commits and generate the CHANGELOG content ====== //
 
@@ -52,15 +53,20 @@ async function run() {
       process.exit(0)
     }
 
-    const newTag = await getAndSetNewGitTag(commits);
-    spinner.succeed(`Tag "${newTag}" created successfully.`);
+    console.log(commits);
 
-    const changelog = generateChangelog(commits);
-    console.log(changelog);
+    // const newTag = await getAndSetNewGitTag(commits);
+    // spinner.succeed(`Tag "${newTag}" created successfully.`);
+
+    // const changelog = generateChangelog(commits);
+    // console.log(changelog);
   }
 
   spinner.succeed('Success to generate the changelog.md file!');
 }
+
+// TODO: Generate a html file based on the .md file
+// https://github.com/showdownjs/showdown
 
 run()
   .then(() => {

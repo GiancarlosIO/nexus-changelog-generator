@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fc24b4c-67ef-4f71-8cc5-42734e78db56" name="Default Changelist" comment="" />
+    <list default="true" id="9fc24b4c-67ef-4f71-8cc5-42734e78db56" name="Default Changelist" comment="test: Refactor utils and fake data tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gmk9w2FnDLQxa4tP0P3lJnkM3c" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -17,11 +46,50 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\frontend-projects\side-projects\nexus-changelog-generator\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="D:\frontend-projects\side-projects\nexus-changelog-generator\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Jest.Utils">
+    <configuration name="Utils" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Utils" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Utils.&lt;getRepositoryUrl&gt; should return the remote repository url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Utils" />
+        <test-name value="&lt;getRepositoryUrl&gt; should return the remote repository url" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Utils" />
+        <item itemvalue="Jest.Utils.&lt;getRepositoryUrl&gt; should return the remote repository url" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,25 +99,123 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598727008689</updated>
-      <workItem from="1598727009885" duration="6511000" />
+      <workItem from="1598727009885" duration="26063000" />
+      <workItem from="1598768977619" duration="41000" />
+      <workItem from="1598769026512" duration="3274000" />
+      <workItem from="1599950576047" duration="19850000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: Add getAndSetNewGitTag and generateChangelog functions">
+      <created>1598771864683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598771864683</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: Add getAndSetNewGitTag and generateChangelog functions">
+      <created>1598771906758</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598771906758</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: Implement tagged and improve commit-parse step">
+      <created>1598772299003</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598772299003</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: Setup testing enviroment">
+      <created>1599955671250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599955671250</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Implement generateChangelog and getRepositoryUrl utils using ttd">
+      <created>1599972488861</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599972488861</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test: Refactor utils and fake data tests">
+      <created>1599976255458</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599976255458</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Add getAndSetNewGitTag and generateChangelog functions" />
+    <MESSAGE value="feat: Implement tagged and improve commit-parse step" />
+    <MESSAGE value="feat: Setup testing enviroment" />
+    <MESSAGE value="feat: Implement generateChangelog and getRepositoryUrl utils using ttd" />
+    <MESSAGE value="test: Refactor utils and fake data tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: Refactor utils and fake data tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="349" key="#Notifications" timestamp="1598727032773">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="715" y="349" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1598727032773" />
+    <state x="678" y="193" key="#TypeScript" timestamp="1598757461406">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="678" y="193" key="#TypeScript/0.0.1920.1050@0.0.1920.1050" timestamp="1598757461406" />
     <state x="709" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598729555967">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="709" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1598729555967" />
-    <state x="461" y="170" key="SettingsEditor" timestamp="1598729229549">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1599972689385">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1598729229549" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599972689385" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1599972689385">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599972689385" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1599972689385">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599972689385" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1599972689385">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599972689385" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1599972521067">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1599972521067" />
+    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1599975284071">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="258" width="585" height="534" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1599975284071" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1598772298140">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1598772298140" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1599975608070">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1599975608070" />
   </component>
 </project>

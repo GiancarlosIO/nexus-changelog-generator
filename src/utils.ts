@@ -168,10 +168,8 @@ export const getRepositoryUrl = async () => {
   return remoteOriginUrl.replace(/\n/g, '').replace('.git', '');
 };
 
-export const generateChangelog = (
-  commits: RawCommit[],
-  repositoryUrl?: string
-) => {
+export const generateChangelog = async (commits: RawCommit[]) => {
+  const repositoryUrl = await getRepositoryUrl();
   const commitArr = commits
     .map((commit) => parseCommit(commit, repositoryUrl))
     .filter((commit) => !commit.isFromMerge)
@@ -213,7 +211,7 @@ export const generateChangelog = (
 ### ${commitScopeKey}
 ${commitsByAppScope[commitScopeKey]
   .map(
-    (commit) => `* ${commit.subject} [${commit.commit.short}](${commit.url})`
+    (commit) => `* ${commit.subject} ([${commit.commit.short}](${commit.url}))`
   )
   .join('\n')}
 `;

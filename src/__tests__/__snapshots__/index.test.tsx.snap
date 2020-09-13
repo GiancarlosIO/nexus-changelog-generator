@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utils <generateChangelog> should create the readme.md content by parsing an array of commits 1`] = `
+"
+## 2020-5-31
+
+### concrete_support_alarm.dna
+* feat(concrete_support_alarm.dna): hack solid state array ([d028936](https://bitbucket.org/repositoryOrg/repositoryName/a3d753c03b82ee20edba9b8713acb3ff00941146))
+
+### drive_reintermediate.shf
+* feat(drive_reintermediate.shf): program bluetooth hard drive ([e15a888](https://bitbucket.org/repositoryOrg/repositoryName/68fb0b088f6c00003dc3fc7fa24005be10b5891c))
+
+### berkshire_engineer.wdb
+* feat(berkshire_engineer.wdb): back up auxiliary array ([531737c](https://bitbucket.org/repositoryOrg/repositoryName/29c1aab15385c68c7ece0e816c2729d7016e3cba))
+
+### capacity_shirt_data.stc
+* feat(capacity_shirt_data.stc): hack redundant program ([9409dd0](https://bitbucket.org/repositoryOrg/repositoryName/5c83487eb17726b0d5f122f0962cdd4a2ac1cb22))
+
+### functionality_cambridgeshire_robust.me
+* feat(functionality_cambridgeshire_robust.me): program wireless firewall ([67b7ce9](https://bitbucket.org/repositoryOrg/repositoryName/99025af59225e56df6700a2f7319ebf36d96b266))
+
+### ohio_generate_sensor.mpe
+* feat(ohio_generate_sensor.mpe): reboot back-end panel ([f99f78f](https://bitbucket.org/repositoryOrg/repositoryName/097cd6b554234d0156dc80e05e69d6b6c3de385a))
+
+### digitized.etx
+* feat(digitized.etx): quantify online feed ([cf3c97f](https://bitbucket.org/repositoryOrg/repositoryName/b632f28925d65d57a906fdbd0c8b5c7858cbe678))
+
+### hack_soap_lime.dd2
+* feat(hack_soap_lime.dd2): generate primary system ([7ae4f13](https://bitbucket.org/repositoryOrg/repositoryName/1b625260698555f5a2b9e288a26f9e9b4540ffae))
+
+### face_deposit.mb
+* feat(face_deposit.mb): navigate neural capacitor ([0a46107](https://bitbucket.org/repositoryOrg/repositoryName/e6f0e02ab7f535acf8fee27f31c76285102ef64b))
+
+### rustic_deposit.mathml
+* feat(rustic_deposit.mathml): bypass haptic bus ([5c8e9c5](https://bitbucket.org/repositoryOrg/repositoryName/59b4665d8b7968fb060b56e5e32c0e018f29a120))
+
+### investment_invoice.odc
+* feat(investment_invoice.odc): override auxiliary card ([f5082cf](https://bitbucket.org/repositoryOrg/repositoryName/dd0163a70b7a0a4b5ba7bab373be3e82d7a7743c))
+
+### configuration.gramps
+* feat(configuration.gramps): generate open-source alarm ([c9200ee](https://bitbucket.org/repositoryOrg/repositoryName/efb6e67fd28ca25585ee2c9b4b70daee08ac4600))
+
+### handmade_niches_automotive.uvvp
+* feat(handmade_niches_automotive.uvvp): index back-end bandwidth ([922b6f9](https://bitbucket.org/repositoryOrg/repositoryName/e738f141ff9ebe15dfb9c7ccf7db1391f985031c))
+
+### fresh.c4p
+* feat(fresh.c4p): reboot wireless pixel ([a16b015](https://bitbucket.org/repositoryOrg/repositoryName/642c3b7e9a4001e487da8c79a45bf45480e94463))
+
+### garden_extend_grey.w3d
+* feat(garden_extend_grey.w3d): reboot bluetooth application ([59203c4](https://bitbucket.org/repositoryOrg/repositoryName/8355bb7059b826afe0e713fab7d80d438f9985d9))
+
+### rubber_robust.cmx
+* feat(rubber_robust.cmx): bypass wireless bandwidth ([797ebcd](https://bitbucket.org/repositoryOrg/repositoryName/24c28ef934786427f393a89b45c91fa6b207fc54))
+
+### lime_connecting_circuit.geo
+* feat(lime_connecting_circuit.geo): compress neural program ([7921f6d](https://bitbucket.org/repositoryOrg/repositoryName/5ad5753f7e4c97f5f50c7b0480a6f037ab69d189))
+
+### productivity_computers_lari.c4d
+* feat(productivity_computers_lari.c4d): generate 1080p pixel ([0ef40e6](https://bitbucket.org/repositoryOrg/repositoryName/f52dcde756b5c7ef377d7dc72ddb97d3c573fb61))
+
+### functionalities_dollar.js
+* feat(functionalities_dollar.js): bypass optical pixel ([4a4266c](https://bitbucket.org/repositoryOrg/repositoryName/534982b1857167a402f86ee89c7d971a17df65bc))
+
+### zero_withdrawal_clothing.deploy
+* feat(zero_withdrawal_clothing.deploy): navigate back-end microchip ([6fde560](https://bitbucket.org/repositoryOrg/repositoryName/ecd7f413048187e0e7d0fad56eef380a7a871e18))
+
+  "
+`;

@@ -21,11 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9fc24b4c-67ef-4f71-8cc5-42734e78db56" name="Default Changelist" comment="test: Refactor utils and fake data tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__mocks__/execa.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__mocks__/execa.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +102,7 @@
       <workItem from="1598727009885" duration="26063000" />
       <workItem from="1598768977619" duration="41000" />
       <workItem from="1598769026512" duration="3274000" />
-      <workItem from="1599950576047" duration="19225000" />
+      <workItem from="1599950576047" duration="19850000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Add getAndSetNewGitTag and generateChangelog functions">
       <created>1598771864683</created>
@@ -142,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599972488861</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test: Refactor utils and fake data tests">
+      <created>1599976255458</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599976255458</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

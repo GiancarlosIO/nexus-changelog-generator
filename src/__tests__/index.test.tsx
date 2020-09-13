@@ -5,7 +5,7 @@ import { generateChangelog, getRepositoryUrl } from '../utils';
 const commitList = Array.from({ length: 20 }).map(() => ({
   commit: {
     // @ts-ignore
-    long: faker.git.commitSha,
+    long: faker.git.commitSha(),
     // @ts-ignore
     short: faker.git.shortSha(),
   },
@@ -37,8 +37,8 @@ const commitList = Array.from({ length: 20 }).map(() => ({
 }));
 
 describe('Utils', () => {
-  it('<generateChangelog> should create the readme.md content by parsing an array of commits', () => {
-    const changelog = generateChangelog(commitList);
+  it('<generateChangelog> should create the readme.md content by parsing an array of commits', async () => {
+    const changelog = await generateChangelog(commitList);
 
     expect(changelog).toMatchSnapshot();
   });

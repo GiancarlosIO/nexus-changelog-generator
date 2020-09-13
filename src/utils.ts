@@ -149,10 +149,15 @@ export const getPackageVersion = async () => {
   return JSON.parse(packageJson).version;
 };
 
-export const getRepositoryUrl = (remoteOriginUrl: string) => {
+export const getRepositoryUrl = async () => {
+  const remoteOriginUrl = ((await execa(
+    'git',
+    'config --get remote.origin.url'.split(' ')
+  )) as unknown) as string;
+
   if (remoteOriginUrl.includes('bitbucket')) {
     const orgAndRepositoryName = remoteOriginUrl
-      .replace('\n', '')
+      .replace(/\n/g, '')
       .replace('.git', '')
       .split(':')[1];
 
@@ -160,7 +165,7 @@ export const getRepositoryUrl = (remoteOriginUrl: string) => {
   }
 
   // github by default
-  return remoteOriginUrl.replace('\n', '').replace('.git', '');
+  return remoteOriginUrl.replace(/\n/g, '').replace('.git', '');
 };
 
 export const generateChangelog = (

@@ -25,7 +25,7 @@ export type RawCommit = {
   author: {
     name: string;
     email: string;
-    date: string;
+    date: Date;
   };
   committer: {
     name: string;
